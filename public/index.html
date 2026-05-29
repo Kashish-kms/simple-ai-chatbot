@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Builder | Modern AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Chat Assistant</span>
+                </div>
+                <button id="new-chat-btn" class="new-chat-btn">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
+            <div class="chat-history">
+                <div class="history-label">Recent Chats</div>
+                <div id="history-list" class="history-list">
+                    <!-- History items will be injected here -->
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="sidebar-btn">
+                    <i class="fas fa-moon"></i> <span>Dark Mode</span>
+                </button>
+                <button class="sidebar-btn">
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="chat-info">
+                    <h2>AI Assistant</h2>
+                    <div class="status">
+                        <span class="status-dot"></span> Online
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="header-btn" title="Search"><i class="fas fa-search"></i></button>
+                    <button class="header-btn" title="More"><i class="fas fa-ellipsis-v"></i></button>
+                    <button id="sidebar-toggle" class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                </div>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message ai-message animate-in">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI Assistant. How can I help you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="typing-indicator" class="typing-indicator hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <footer class="chat-footer">
+                <form id="chat-form" class="input-container">
+                    <div class="input-wrapper">
+                        <button type="button" class="attachment-btn"><i class="fas fa-paperclip"></i></button>
+                        <textarea id="user-input" placeholder="Type your message..." rows="1"></textarea>
+                        <button type="submit" id="send-btn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <p class="footer-note">AI can make mistakes. Check important info.</p>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
